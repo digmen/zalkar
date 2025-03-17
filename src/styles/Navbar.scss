@@ -1,0 +1,129 @@
+.logo {
+  cursor: pointer;
+}
+.mainBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1vmax;
+}
+.firstBlock {
+  width: 30vmax;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  > div {
+    > h2 {
+      text-wrap: nowrap;
+    }
+    > p {
+      margin-right: 1rem;
+    }
+  }
+}
+.secondBlock {
+  width: 20vmin;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  > p {
+    margin-right: 1rem;
+    cursor: pointer;
+  }
+  :hover {
+    color: rgba(141, 28, 255, 1);
+  }
+}
+.firstBlock_nav {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  > p {
+    cursor: pointer;
+  }
+  :hover {
+    color: rgba(141, 28, 255, 1);
+  }
+}
+.burgerMenu {
+  display: none;
+  cursor: pointer;
+  align-items: center;
+}
+.burgerMenu_img {
+  width: 2rem;
+  z-index: 2;
+}
+.closingImg {
+  position: fixed;
+  top: 30px;
+  right: 20px;
+}
+@keyframes openburg {
+  0% {
+    top: -700px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+.openedBurger {
+  z-index: 1;
+  left: 0;
+  top: 0;
+  position: fixed;
+  color: white;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(53, 53, 53);
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: openburg 1s ease-in-out;
+  > p {
+    margin-top: 10vmax;
+  }
+}
+.closedBurger {
+  z-index: 1;
+  left: 0;
+  top: -1000px;
+  position: fixed;
+  color: white;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(53, 53, 53);
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 1s ease-in-out;
+  > p {
+    margin-top: 10vmax;
+  }
+}
+@media screen and (max-width: 1025px) {
+  .burgerMenu {
+    display: flex;
+  }
+  .firstBlock_nav {
+    display: none;
+  }
+  .secondBlock {
+    display: none;
+  }
+}
+@media screen and (max-width: 769px) {
+  .firstBlock {
+    width: 40vmax;
+  }
+  .secondBlock {
+    width: 25vmax;
+  }
+}
+@media screen and (max-width: 415px) {
+  .firstBlock_nav {
+    display: none;
+  }
+}

@@ -1,0 +1,16 @@
+.mainBlock_otlick {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  row-gap: 3rem;
+}
+@media screen and (max-width: 1024px) {
+  .mainBlock_otlick {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 768px) {
+  .mainBlock_otlick {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

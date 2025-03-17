@@ -1,0 +1,19 @@
+.title {
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+.vacanList {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  row-gap: 2rem;
+  margin-bottom: 2rem;
+}
+.ListBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.vacancy-pageblock {
+  min-height: 60vh;
+}

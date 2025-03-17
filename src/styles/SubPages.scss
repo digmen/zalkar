@@ -1,0 +1,11 @@
+.mainBlockSub {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 3rem;
+}
+@media screen and (max-width: 1024px) {
+  .mainBlockSub {
+    flex-direction: column;
+  }
+}

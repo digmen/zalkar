@@ -1,0 +1,89 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.mainSection_img {
+  width: 40vmax;
+}
+.infoBlock {
+  height: 15vmax;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.infoBlock_input {
+  width: 80%;
+  height: 2.5vmax;
+  padding-left: 1rem;
+  border: none;
+  border-radius: 5px;
+  box-shadow: rgba(212, 212, 212, 0.6) 0px 3px 20px;
+  background-color: none;
+}
+.infoBlock_btn {
+  border: none;
+  border-radius: 5px;
+  height: 2.5vmax;
+}
+.infoBlock_search {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.btn_naity {
+  width: 15%;
+  color: white;
+  background-color: rgba(141, 28, 255, 1);
+  transition: 0.3s;
+}
+.btn_naity:hover {
+  transition: 0.3s;
+  box-shadow: rgba(142, 28, 255, 0.485) 0px 2px 20px;
+}
+.btn_razmestit {
+  background-color: transparent;
+  border: 1px black solid;
+  transition: 0.4s;
+}
+.btn_razmestit:hover {
+  background-color: rgba(141, 28, 255, 1);
+  box-shadow: rgba(142, 28, 255, 0.485) 0px 2px 20px;
+  color: white;
+  border: none;
+  transition: 0.3s;
+}
+@media screen and (max-width: 1024px) {
+  .infoBlock {
+    height: 20vmax;
+    > h1 {
+      font-size: 1.5em;
+    }
+  }
+  .infoBlock_input {
+    height: 3vmax;
+  }
+  .infoBlock_btn {
+    height: 3vmax;
+  }
+}
+@media screen and (max-width: 769px) {
+  .infoBlock {
+    height: 30vmax;
+    > h1 {
+      font-size: 1.3em;
+    }
+  }
+  .infoBlock_input {
+    height: 4vmax;
+  }
+  .infoBlock_btn {
+    height: 4vmax;
+  }
+}
+@media screen and (max-width: 415px) {
+  .container {
+    flex-direction: column;
+  }
+}

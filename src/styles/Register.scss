@@ -1,0 +1,110 @@
+.regMain_block {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.regPanel {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  height: 30rem;
+  justify-content: space-between;
+  > input {
+    height: 3vmax;
+    padding-left: 1rem;
+    border-radius: 5px;
+    border: 1px rgba(217, 217, 217, 1) solid;
+  }
+}
+.regPanel_btn {
+  width: 100%;
+  height: 3vmax;
+  background-color: rgba(141, 28, 255, 1);
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.regPanel_btn:hover {
+  transition: 0.3s;
+  box-shadow: rgba(142, 28, 255, 0.485) 0px 2px 20px;
+}
+.regPanel_register {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  > span {
+    color: rgba(141, 28, 255, 1);
+    cursor: pointer;
+  }
+}
+.checkBox_reg {
+  display: flex;
+  align-items: center;
+}
+.checkBox_reg > input {
+  margin-right: 5px;
+}
+.regPanel_inputs {
+  height: 3vmax;
+  padding-left: 1rem;
+  border-radius: 5px;
+  border: 1px rgba(217, 217, 217, 1) solid;
+  width: 45%;
+}
+.regPanel_inputsBlock {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.selectreg {
+  width: 100%;
+  height: 3vmax;
+  border-radius: 5px;
+  padding-left: 1rem;
+  border: 1px rgba(217, 217, 217, 1) solid;
+  margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 1024px) {
+  .regMain_block {
+    flex-direction: column;
+  }
+  .regPanel {
+    width: 80%;
+    height: auto;
+  }
+  .regPanel_inputs,
+  .regPanel_btn,
+  .selectreg {
+    height: 6vmax;
+  }
+  .regPanel > input {
+    height: 6vmax;
+    margin-top: 1rem;
+  }
+
+  .regMain_block > div > img {
+    width: 40vmax;
+  }
+  .regPanel_inputsBlock {
+    flex-direction: column;
+  }
+  .regPanel_inputs {
+    width: auto;
+    margin-top: 1rem;
+  }
+  .checkBox_reg,
+  .selectreg {
+    margin-top: 1rem;
+  }
+  .selectreg {
+    height: 6vmax;
+  }
+}

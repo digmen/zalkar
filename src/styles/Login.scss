@@ -1,0 +1,114 @@
+.loginMain_block {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.loginPanel {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  height: 20vmax;
+  justify-content: space-between;
+  > input {
+    height: 3vmax;
+    padding-left: 1rem;
+    border-radius: 5px;
+    border: 1px rgba(217, 217, 217, 1) solid;
+  }
+}
+.loginPanel_btn {
+  width: 100%;
+  height: 3vmax;
+  background-color: rgba(141, 28, 255, 1);
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loginPanel_btn:hover {
+  transition: 0.3s;
+  box-shadow: rgba(142, 28, 255, 0.485) 0px 2px 20px;
+}
+.googleBtn{
+  background-color: rgb(255, 255, 255);
+  color: black;
+  border: black 1px solid;
+  border-radius: 25px;
+
+}
+.googleBtn:hover {
+  transition: 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.485) 0px 2px 20px;
+}
+.loginPanel_register {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  > span {
+    color: rgba(141, 28, 255, 1);
+    cursor: pointer;
+  }
+}
+.checkBox_login {
+  display: flex;
+  align-items: center;
+}
+.checkBox_login > input {
+  margin-right: 5px;
+}
+@media screen and (max-width: 1024px) {
+  .loginMain_block {
+    flex-direction: column;
+  }
+  .loginPanel {
+    width: 80%;
+    height: 35vmax;
+  }
+  .loginPanel_inputs,
+  .loginPanel_btn {
+    height: 5vmax;
+  }
+  .loginPanel > input {
+    height: 5vmax;
+  }
+
+  .loginMain_block > div > img {
+    width: 40vmax;
+  }
+}
+@media screen and (max-width: 410px) {
+  .loginPanel_register {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.googleBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+  transition: 0.3s;
+
+  &:hover {
+    background-color: #f1f1f1;
+  }
+
+  .google-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+}
+
