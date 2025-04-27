@@ -6,7 +6,6 @@ import { useSearchParams } from "react-router-dom";
 const GoogleCallback = () => {
     const navigate = useNavigate();
     const [searchParams] = useSearchParams();
-    console.log(searchParams);
 
     useEffect(() => {
         const code = searchParams.get("code");

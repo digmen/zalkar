@@ -1,8 +1,8 @@
 import "../../styles/CardAbout.scss";
-import {useNavigate, useParams} from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import {useAuth} from "../../contexts/AuthContextProvider";
+import { useAuth } from "../../contexts/AuthContextProvider";
 
 interface Vacancy {
   id: number;
@@ -24,7 +24,7 @@ const CardAbout = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const { user, getUser } = useAuth();
-  const [vacancy, setVacancy] = useState<Vacancy>();
+  const [vacancy, setVacancy] = useState < Vacancy > ();
   const [isEditing, setIsEditing] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -59,16 +59,14 @@ const CardAbout = () => {
 
   async function updateVacancy() {
     let formData = new FormData();
-    formData = {
-      title: title,
-      address: address,
-      company_name: companyName,
-      phone_number: phoneNumber,
-      description: description,
-      type_vacation: vacancy?.type_vacation,
-      requirements: requirements,
-      responsibilities: responsibilities,
-    };
+    formData.append("title", title);
+    formData.append("address", address);
+    formData.append("company_name", companyName);
+    formData.append("phone_number", phoneNumber);
+    formData.append("description", description);
+    formData.append("type_vacation", '');
+    formData.append("requirements", requirements);
+    formData.append("responsibilities", responsibilities);
     console.log(formData);
     setIsEditing(false);
     updateVacancyRequest(formData);
@@ -119,72 +117,72 @@ const CardAbout = () => {
   }
 
   return (
-          <>
-            <div className="mainBlock_about">
-              <div className="aboutBlock_first">
-                {isEditing ? (
-                        <input className="about_smallInput mini-title" type="text" value={title} onChange={(e) => setTitle(e.target.value)}/>
-                ) : (
-                        <h2>{vacancy?.title}</h2>
-                )}
-                {isEditing ? (
-                        <textarea className="about_bigInput" value={description} onChange={(e) => setDescription(e.target.value)}/>
-                ) : (
-                        <p>{vacancy?.description}</p>
-                )}
-                <h3>Обязанности:</h3>
-                {isEditing ? (
-                        <textarea className="about_bigInput" value={responsibilities} onChange={(e) => setResponsibilities(e.target.value)}/>
-                ) : (
-                        <p>{vacancy?.responsibilities}</p>
-                )}
-                <h3>Требования:</h3>
-                {isEditing ? (
-                        <textarea className="about_bigInput" value={requirements} onChange={(e) => setRequirements(e.target.value)}/>
-                ) : (
-                        <p>{vacancy?.requirements}</p>
-                )}
-              </div>
-              <div className="aboutBlock_second">
-                <div className="aboutBlock_second_info">
-                  {isEditing ? (
-                          <input className="about_smallInput mini-title" type="text" value={companyName}
-                                 onChange={(e) => setCompanyName(e.target.value)}/>
-                  ) : (
-                          <h4>{vacancy?.company_name}</h4>
-                  )}
-                  {isEditing ? (
-                          <input className="about_smallInput" type="text" value={address}
-                                 onChange={(e) => setAddress(e.target.value)}/>
-                  ) : (
-                          <p>{vacancy?.address}</p>
-                  )}
-                  {isEditing ? (
-                          <input className="about_smallInput" type="text" value={phoneNumber}
-                                 onChange={(e) => setPhoneNumber(e.target.value)}/>
-                  ) : (
-                          <p>Контакты: {vacancy?.phone_number}</p>
-                  )}
+    <>
+      <div className="mainBlock_about">
+        <div className="aboutBlock_first">
+          {isEditing ? (
+            <input className="about_smallInput mini-title" type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+          ) : (
+            <h2>{vacancy?.title}</h2>
+          )}
+          {isEditing ? (
+            <textarea className="about_bigInput" value={description} onChange={(e) => setDescription(e.target.value)} />
+          ) : (
+            <p>{vacancy?.description}</p>
+          )}
+          <h3>Обязанности:</h3>
+          {isEditing ? (
+            <textarea className="about_bigInput" value={responsibilities} onChange={(e) => setResponsibilities(e.target.value)} />
+          ) : (
+            <p>{vacancy?.responsibilities}</p>
+          )}
+          <h3>Требования:</h3>
+          {isEditing ? (
+            <textarea className="about_bigInput" value={requirements} onChange={(e) => setRequirements(e.target.value)} />
+          ) : (
+            <p>{vacancy?.requirements}</p>
+          )}
+        </div>
+        <div className="aboutBlock_second">
+          <div className="aboutBlock_second_info">
+            {isEditing ? (
+              <input className="about_smallInput mini-title" type="text" value={companyName}
+                onChange={(e) => setCompanyName(e.target.value)} />
+            ) : (
+              <h4>{vacancy?.company_name}</h4>
+            )}
+            {isEditing ? (
+              <input className="about_smallInput" type="text" value={address}
+                onChange={(e) => setAddress(e.target.value)} />
+            ) : (
+              <p>{vacancy?.address}</p>
+            )}
+            {isEditing ? (
+              <input className="about_smallInput" type="text" value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)} />
+            ) : (
+              <p>Контакты: {vacancy?.phone_number}</p>
+            )}
 
 
-                </div>
-                {user?.id === vacancy?.created_by && (
-                        <div className="about_btns">
-                          {!isEditing ? (
-                                  <p className="about_btn" onClick={() => setIsEditing(true)}>Редактировать</p>
-                          ) : (
-                                  <p className="about_btn save" onClick={updateVacancy}>Сохранить</p>
-                          )}
-                          <p className="about_btn delete" onClick={() => deleteVacancy()}>
-                            Удалить
-                          </p>
-                        </div>
-
-                )}
-              </div>
+          </div>
+          {user?.id === vacancy?.created_by && (
+            <div className="about_btns">
+              {!isEditing ? (
+                <p className="about_btn" onClick={() => setIsEditing(true)}>Редактировать</p>
+              ) : (
+                <p className="about_btn save" onClick={updateVacancy}>Сохранить</p>
+              )}
+              <p className="about_btn delete" onClick={() => deleteVacancy()}>
+                Удалить
+              </p>
             </div>
 
-          </>
+          )}
+        </div>
+      </div>
+
+    </>
   );
 };
 

@@ -97,7 +97,14 @@ const MyProfileFavouritesVacancyPage = (_props: Props) => {
   return (
     <div className="Favour">
       {DATA_VACAN.map((item: any) => (
-        <Card item={item} key={item.key} />
+        <Card
+          key={item.key}
+          id={item.id}
+          title={item.title}
+          company_name={item.company_name}
+          type_vacation={item.type_vacation}
+          created_at={item.created_at}
+        />
       ))}
     </div>
   );

@@ -100,7 +100,14 @@ const MyProfileOtclickPage = (_props: Props) => {
     <div className="mainBlock_otlick">
       {" "}
       {DATA_VACAN.map((item: any) => (
-        <Card item={item} key={item.key} />
+        <Card
+          key={item.key}
+          id={item.key}
+          title={item.title}
+          company_name={item.company}
+          type_vacation={item.graph}
+          created_at={item.time}
+        />
       ))}
     </div>
   );

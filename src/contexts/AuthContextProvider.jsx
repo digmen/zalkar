@@ -86,14 +86,26 @@ const AuthContextProvider = ({ children }) => {
 
   async function getUser() {
 
+    // Функция для получения значения куки по имени
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+      return null;
+    }
+
+    // Пример использования
+    const accessToken = getCookie('access');
+    console.log(accessToken);
+
     try {
       const response = await fetch(`${import.meta.env.VITE_API_URL}api/v1/users/me/`, {
         method: "GET",
         headers: {
-          // Authorization: `Bearer ${accessToken}`,
+          Authorization: `Bearer ${accessToken}`,
           "Content-Type": "application/json",
         },
-        credentials: "include",
+        credentials: 'include',
       });
 
       if (!response.ok) {

@@ -1,6 +1,3 @@
-import React from 'react';
-import { useNavigate } from "react-router-dom";
-
 type Props = {};
 
 const Rezum = (_props: Props) => {

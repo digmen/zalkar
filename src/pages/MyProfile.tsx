@@ -29,11 +29,10 @@ const MyProfile = () => {
 
       async function updateUser() {
             let formData = new FormData();
-            formData = {
-                  first_name: name,
-                  last_name: surname,
-                  email: email,
-            };
+            formData.append("first_name", name);
+            formData.append("last_name", surname);
+            formData.append("email", email);
+
             console.log(formData);
             setIsUpdating(false);
             updateUserRequest(formData);
@@ -64,85 +63,85 @@ const MyProfile = () => {
       }
 
       return (
-              <div>
-                    <div className="mainBlock_myProfile">
-                          <div>
-                                <h3>ФИО</h3>
-                                <div className="myProfile_info">
-                                      <input
-                                              type="text"
-                                              placeholder="Имя"
-                                              value={name}
-                                              onChange={(e) => setName(e.target.value)}
-                                              disabled={!isUpdating}
-                                      />
-                                      <input
-                                              type="text"
-                                              placeholder="Фамилия"
-                                              value={surname}
-                                              onChange={(e) => setSurname(e.target.value)}
-                                              disabled={!isUpdating}
-                                      />
-                                </div>
-                                <div className="myProfile_contacts">
-                                      <h3>Контакты</h3>
-                                      <div className="myProfile_contactsMini">
-                                            <div>
-                                                  <p>Эллектронный адрес</p>
-                                            </div>
-                                            <input
-                                                    type="email"
-                                                    placeholder="your@email.com"
-                                                    value={email}
-                                                    onChange={(e) => setEmail(e.target.value)}
-                                                    disabled={!isUpdating}
-                                            />
-                                      </div>
-                                </div>
-                                <div className="myProfile_contacts">
-                                      <h3>Информация</h3>
-                                      <div className="myProfile_contactsMini">
-                                            <div>
-                                                  <p>Роль</p>
-                                            </div>
-                                            <input
-                                                    type="text"
-                                                    placeholder="EMPLOYEE"
-                                                    value={role}
-                                                    readOnly
-                                            />
-                                      </div>
-                                      <div className="myProfile_contactsMini">
-                                            <div>
-                                                  <p>Username</p>
-                                            </div>
-                                            <input
-                                                    type="text"
-                                                    placeholder="username"
-                                                    value={username}
-                                                    readOnly
-                                            />
-                                      </div>
-                                </div>
+            <div>
+                  <div className="mainBlock_myProfile">
+                        <div>
+                              <h3>ФИО</h3>
+                              <div className="myProfile_info">
+                                    <input
+                                          type="text"
+                                          placeholder="Имя"
+                                          value={name}
+                                          onChange={(e) => setName(e.target.value)}
+                                          disabled={!isUpdating}
+                                    />
+                                    <input
+                                          type="text"
+                                          placeholder="Фамилия"
+                                          value={surname}
+                                          onChange={(e) => setSurname(e.target.value)}
+                                          disabled={!isUpdating}
+                                    />
+                              </div>
+                              <div className="myProfile_contacts">
+                                    <h3>Контакты</h3>
+                                    <div className="myProfile_contactsMini">
+                                          <div>
+                                                <p>Эллектронный адрес</p>
+                                          </div>
+                                          <input
+                                                type="email"
+                                                placeholder="your@email.com"
+                                                value={email}
+                                                onChange={(e) => setEmail(e.target.value)}
+                                                disabled={!isUpdating}
+                                          />
+                                    </div>
+                              </div>
+                              <div className="myProfile_contacts">
+                                    <h3>Информация</h3>
+                                    <div className="myProfile_contactsMini">
+                                          <div>
+                                                <p>Роль</p>
+                                          </div>
+                                          <input
+                                                type="text"
+                                                placeholder="EMPLOYEE"
+                                                value={role}
+                                                readOnly
+                                          />
+                                    </div>
+                                    <div className="myProfile_contactsMini">
+                                          <div>
+                                                <p>Username</p>
+                                          </div>
+                                          <input
+                                                type="text"
+                                                placeholder="username"
+                                                value={username}
+                                                readOnly
+                                          />
+                                    </div>
+                              </div>
 
-                                <div className="myProfile_btns">
-                                      {!isUpdating ? (
-                                              <p className="myProfile_btn" onClick={() => setIsUpdating(true)}>
-                                                    Редактировать
-                                              </p>
-                                      ) : (
-                                              <p className="myProfile_btn save" onClick={() => updateUser()}>
-                                                    Сохранить
-                                              </p>
-                                      )}
+                              <div className="myProfile_btns">
+                                    {!isUpdating ? (
+                                          <p className="myProfile_btn" onClick={() => setIsUpdating(true)}>
+                                                Редактировать
+                                          </p>
+                                    ) : (
+                                          <p className="myProfile_btn save" onClick={() => updateUser()}>
+                                                Сохранить
+                                          </p>
+                                    )}
 
-                                      <p className="myProfile_btn logout" onClick={() => logout()}>
-                                            Выйти
-                                      </p>
-                                </div>
-                          </div>
-                    </div>
-              </div>
+                                    <p className="myProfile_btn logout" onClick={() => logout()}>
+                                          Выйти
+                                    </p>
+                              </div>
+                        </div>
+                  </div>
+            </div>
       );
 };
 
