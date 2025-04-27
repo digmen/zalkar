@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-
+import Cookies from 'js-cookie';
 export const authContext = React.createContext();
 export const useAuth = () => useContext(authContext);
 
@@ -86,15 +86,14 @@ const AuthContextProvider = ({ children }) => {
 
   async function getUser() {
 
-    let accessToken = localStorage.getItem("JobKgAccessToken");
-
     try {
       const response = await fetch(`${import.meta.env.VITE_API_URL}api/v1/users/me/`, {
         method: "GET",
         headers: {
-          Authorization: `Bearer ${accessToken}`,
+          // Authorization: `Bearer ${accessToken}`,
           "Content-Type": "application/json",
         },
+        credentials: "include",
       });
 
       if (!response.ok) {

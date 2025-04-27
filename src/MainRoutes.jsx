@@ -12,7 +12,9 @@ import MyProfilePage from "./pages/MyProfilePage";
 import NoviyRezume from "./pages/NoviyRezume";
 import Vacancies from "./pages/Vacancies.tsx";
 import NotFoundPage from "./pages/NotFoundPage.tsx";
-import {handleGoogleCallback} from "./contexts/loader.ts"
+import { handleGoogleCallback } from "./contexts/loader.ts"
+import { Google } from "@mui/icons-material";
+import GoogleCallback from "./components/auth/GoogleCallback.jsx";
 
 const PUBLIC_ROUTES = [
   {
@@ -92,10 +94,9 @@ const PUBLIC_ROUTES = [
     id: 14,
   },
   {
-    element: <div>Loading...</div>,
+    element: <GoogleCallback />,
     path: "/google/callback",
-    loader: handleGoogleCallback,
-    id:15,
+    id: 15,
   },
 ];
 

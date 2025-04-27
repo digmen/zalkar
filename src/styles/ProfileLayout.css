@@ -1,0 +1,39 @@
+.profileBlock_Navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 92%;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 30px rgb(226, 226, 226);
+}
+.profileBlock_Navigation > button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+.profileBlock_Navigation > button:hover {
+  color: rgb(141, 28, 255);
+}
+.profileBlock_Navigation > button:focus {
+  color: rgb(141, 28, 255);
+}
+
+@media screen and (max-width: 768px) {
+  .profileBlock_Navigation {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 5rem;
+    padding: 1rem;
+  }
+}
+@media screen and (max-width: 320px) {
+  .profileBlock_Navigation {
+    width: 80%;
+  }
+}/*# sourceMappingURL=ProfileLayout.css.map */

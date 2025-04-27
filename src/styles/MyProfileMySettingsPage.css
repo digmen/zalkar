@@ -1,0 +1,193 @@
+.profile-layout {
+  min-height: 70vh;
+}
+
+.mainBlock_myProfile {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 30px rgb(226, 226, 226);
+  border-radius: 10px;
+  padding: 2rem;
+  align-items: center;
+}
+
+.myProfile_info {
+  display: grid;
+  grid-template-columns: repeat(2, 13rem);
+  gap: 10px;
+  margin-top: 1rem;
+}
+.myProfile_info > input {
+  height: 2rem;
+  background-color: rgb(248, 248, 249);
+  border: rgba(0, 0, 0, 0.12) 1px solid;
+  border-radius: 5px;
+  padding-left: 1rem;
+}
+.myProfile_info > input::-moz-placeholder {
+  color: rgb(212, 212, 212);
+  font-weight: 500;
+}
+.myProfile_info > input::placeholder {
+  color: rgb(212, 212, 212);
+  font-weight: 500;
+}
+
+.myProfile_moreInfo {
+  margin-top: 2rem;
+}
+
+.myProfile_inputBlock {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+}
+.myProfile_inputBlock > p {
+  width: 20%;
+}
+.myProfile_inputBlock > input {
+  height: 2rem;
+  padding: 0 1rem;
+  background-color: rgb(248, 248, 249);
+  border: rgba(0, 0, 0, 0.12) 1px solid;
+  border-radius: 5px;
+}
+
+.myProfile_contacts {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.myProfile_contactsMini {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  height: 2rem;
+}
+.myProfile_contactsMini > input {
+  height: 2rem;
+  padding: 0 1rem;
+  background-color: rgb(248, 248, 249);
+  border: rgba(0, 0, 0, 0.12) 1px solid;
+  border-radius: 5px;
+  width: 10rem;
+}
+.myProfile_contactsMini > input::-moz-placeholder {
+  color: rgb(212, 212, 212);
+  font-weight: 500;
+}
+.myProfile_contactsMini > input::placeholder {
+  color: rgb(212, 212, 212);
+  font-weight: 500;
+}
+.myProfile_contactsMini > div {
+  width: 20%;
+}
+
+.oComp {
+  width: 30vmax;
+  height: 10vmax !important;
+  resize: none;
+}
+
+.myProfile_btns {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+@media screen and (max-width: 400px) {
+  .myProfile_btns {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.myProfile_btn {
+  background-color: rgb(141, 28, 255);
+  color: white;
+  max-width: 10rem;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  padding-left: 1rem;
+  cursor: pointer;
+}
+.myProfile_btn.logout {
+  background-color: rgb(255, 28, 28);
+}
+.myProfile_btn.logout:hover {
+  box-shadow: rgba(255, 28, 28, 0.48) 0px 2px 20px;
+}
+.myProfile_btn.save {
+  background-color: rgb(85, 255, 28);
+}
+.myProfile_btn.save:hover {
+  box-shadow: rgba(130, 255, 28, 0.48) 0px 2px 20px;
+}
+
+.myProfile_btn:hover {
+  box-shadow: rgba(142, 28, 255, 0.485) 0px 2px 20px;
+}
+
+.myProfile_gender {
+  height: 2rem;
+  padding: 0 1rem;
+  background-color: rgb(248, 248, 249);
+  border: rgba(0, 0, 0, 0.12) 1px solid;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 1024px) {
+  .myProfile_inputBlock > p {
+    width: 30%;
+  }
+  .myProfile_contactsMini > div {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .myProfile_inputBlock {
+    flex-direction: column;
+    align-items: baseline;
+  }
+  .myProfile_inputBlock > p {
+    margin-bottom: 1rem;
+  }
+  .myProfile_contactsMini {
+    flex-direction: column;
+    align-items: baseline;
+    height: 5rem;
+  }
+  .myProfile_contactsMini > div {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (max-width: 574px) {
+  .myProfile_inputBlock > p {
+    width: 100%;
+  }
+  .myProfile_info {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .mainBlock_myProfile {
+    width: 80%;
+  }
+  .myProfile_inputBlock > input {
+    width: 90%;
+  }
+  .myProfile_contactsMini > input {
+    width: 90%;
+  }
+  .form-control {
+    width: 99% !important;
+  }
+}/*# sourceMappingURL=MyProfileMySettingsPage.css.map */

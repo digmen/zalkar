@@ -1,0 +1,137 @@
+.logo {
+  cursor: pointer;
+}
+
+.mainBlock {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 1vmax;
+}
+
+.firstBlock {
+  width: 30vmax;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+}
+.firstBlock > div > h2 {
+  text-wrap: nowrap;
+}
+.firstBlock > div > p {
+  margin-right: 1rem;
+}
+
+.secondBlock {
+  width: 20vmin;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.secondBlock > p {
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.secondBlock :hover {
+  color: rgb(141, 28, 255);
+}
+
+.firstBlock_nav {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+}
+.firstBlock_nav > p {
+  cursor: pointer;
+}
+.firstBlock_nav :hover {
+  color: rgb(141, 28, 255);
+}
+
+.burgerMenu {
+  display: none;
+  cursor: pointer;
+  align-items: center;
+}
+
+.burgerMenu_img {
+  width: 2rem;
+  z-index: 2;
+}
+
+.closingImg {
+  position: fixed;
+  top: 30px;
+  right: 20px;
+}
+
+@keyframes openburg {
+  0% {
+    top: -700px;
+  }
+  100% {
+    top: 0px;
+  }
+}
+.openedBurger {
+  z-index: 1;
+  left: 0;
+  top: 0;
+  position: fixed;
+  color: white;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(53, 53, 53);
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: openburg 1s ease-in-out;
+}
+.openedBurger > p {
+  margin-top: 10vmax;
+}
+
+.closedBurger {
+  z-index: 1;
+  left: 0;
+  top: -1000px;
+  position: fixed;
+  color: white;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(53, 53, 53);
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 1s ease-in-out;
+}
+.closedBurger > p {
+  margin-top: 10vmax;
+}
+
+@media screen and (max-width: 1025px) {
+  .burgerMenu {
+    display: flex;
+  }
+  .firstBlock_nav {
+    display: none;
+  }
+  .secondBlock {
+    display: none;
+  }
+}
+@media screen and (max-width: 769px) {
+  .firstBlock {
+    width: 40vmax;
+  }
+  .secondBlock {
+    width: 25vmax;
+  }
+}
+@media screen and (max-width: 415px) {
+  .firstBlock_nav {
+    display: none;
+  }
+}/*# sourceMappingURL=Navbar.css.map */

@@ -24,7 +24,7 @@ const Login = () => {
 
   // Ссылка для Google OAuth
   const googleAuthUrl =
-    "https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=http://localhost:3000/google/callback/&prompt=consent&response_type=code&client_id=614782548389-hdp7ss8trmthkhvm6nn5o2892vqv83fb.apps.googleusercontent.com&scope=openid%20email%20profile&access_type=offline";
+    "https://accounts.google.com/o/oauth2/v2/auth?redirect_uri=http://localhost:3000/google/callback/&prompt=consent&response_type=code&client_id=1055119252416-spv32uvrlfs0go1ekg227ilpuu0537s1.apps.googleusercontent.com&scope=openid%20email%20profile&access_type=offline";
 
   return (
     <div className="loginMain_block">
