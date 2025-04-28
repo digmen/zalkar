@@ -1,0 +1,42 @@
+version: "3.8"
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: frontend_proxy
+    restart: always
+    ports:
+      - "8080:80"
+      - "8443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/letsencrypt:/etc/letsencrypt
+      - ./nginx/www:/var/www/certbot
+    depends_on:
+      - frontend
+    networks:
+      - dev
+
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - ./nginx/letsencrypt:/etc/letsencrypt
+      - ./nginx/www:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done'"
+    networks:
+      - dev
+
+  frontend:
+    image: zalkar:latest
+    container_name: frontend-zalkar
+    restart: unless-stopped
+    environment:
+      - BACKEND_URL=https://plfinal.site/api/v1
+    networks:
+      - dev
+    volumes: []
+
+networks:
+  dev:
+    name: dev_network

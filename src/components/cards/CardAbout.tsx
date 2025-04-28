@@ -24,7 +24,7 @@ const CardAbout = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const { user, getUser } = useAuth();
-  const [vacancy, setVacancy] = useState < Vacancy > ();
+  const [vacancy, setVacancy] = useState <Vacancy>({} as Vacancy);
   const [isEditing, setIsEditing] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
