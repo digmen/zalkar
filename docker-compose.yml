@@ -17,16 +17,6 @@ services:
     networks:
       - dev
 
-  certbot:
-    image: certbot/certbot
-    container_name: certbot
-    volumes:
-      - ./nginx/letsencrypt:/etc/letsencrypt
-      - ./nginx/www:/var/www/certbot
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done'"
-    networks:
-      - dev
-
   frontend:
     image: zalkar:latest
     container_name: frontend-zalkar
