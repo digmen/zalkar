@@ -8,7 +8,7 @@ export const handleGoogleCallback = async ({ request }) => {
 
   if (code) {
     try {
-      const response = await fetch('http://localhost:8000/api/v1/auth/google/', {
+      const response = await fetch('https://plfinal.site/api/v1/auth/google/', {
         method: 'POST',
         body: JSON.stringify({ code }),
         headers: {
